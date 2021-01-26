@@ -4,7 +4,6 @@ require 'twitter'
 require 'date'
 
 # tweet_info = TweetInfo.new
-
 @twitter = Twitter::REST::Client.new do |config|
   #   config.consumer_key = 'YOUR_CONSUMER_KEY'
   #   config.consumer_secret = 'YOUR_CONSUMER_SECRET'
@@ -21,22 +20,22 @@ end
 @selected_info = ''
 @option_data_name = []
 
-@total_count = 10
+total_count = 10
 
 @option_data_name = %w[SpaceX rails arduino]
 
-page_one = @twitter.user_timeline(@option_data_name[0], count: @total_count)
-page_two = @twitter.user_timeline(@option_data_name[1], count: @total_count)
-page_three = @twitter.user_timeline(@option_data_name[2], count: @total_count)
+page_one = @twitter.user_timeline(@option_data_name[0], count: total_count)
+page_two = @twitter.user_timeline(@option_data_name[1], count: total_count)
+page_three = @twitter.user_timeline(@option_data_name[2], count: total_count)
 
 @option_data = [page_one, page_two, page_three]
 
 def set_randome_page
-  rand(0..@option_data_name.length - 1).round
+  rand(0..option_data_name.length - 1).round
 end
 
 def set_randome_page_tweet
-  rand(0..@total_count - 1).round
+  rand(0..total_count - 1).round
 end
 
 def selected_tweet
@@ -44,12 +43,12 @@ def selected_tweet
 end
 
 def tweet_update
-#   puts "Fascinating stuff done by @#{@option_data_name[set_randome_page]}" + selected_tweet
+  #   puts "Fascinating stuff done by @#{@option_data_name[set_randome_page]}" + selected_tweet
   @twitter.update("Fascinating stuff done by @#{@option_data_name[@randome_page]}" + selected_tweet)
 end
 
 def memory_checker
-  while (@time.hour == 9) && @time.min.zero?
+  while ((@time.hour == 9)) && @time.min.zero?
     if @memory.include?(selected_tweet)
       set_randome.reset
       set_randome_page.reset
@@ -60,4 +59,20 @@ def memory_checker
   end
 end
 
-memory_checker
+# if @option_data_name.include?(@option_data_name[set_randome_page])
+# puts "true"
+# else
+#     puts "false"
+# end
+
+# if set_randome_page == rand(0..@option_data_name.length - 1).round
+#     puts "true"
+#     puts set_randome_page
+
+# else
+#         puts "false"
+#         puts set_randome_page
+
+#     end
+
+# puts @option_data_name.each_with_index(set_randome_page)
