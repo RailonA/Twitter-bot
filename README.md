@@ -1,8 +1,9 @@
 # ruby-template
-# Enumerable methods
- In this project we worked on simulating the original enumerable methods and creating ours.
 
-![screenshot](./screenshot.png)
+
+This project is Microverse Ruby Capstone project. I have built a bot that posts a tweet at 12pm every day. I have selected three pages that interest me and my bot will retweet one of the recent 10 posts out of these three pages. It will also check its memory to confirm that it does not retweet the same tweet. 
+
+![screenshot](./twitter-Screenshot.png)
  
 ## Built With
 
@@ -25,7 +26,6 @@ To get a local copy up and running follow these simple steps.
 #### Setup
 - Run `bundle install` to install the required gems in your computer
 
-### Install
 
 #### Clone the repository
 - Click on the "code" button above in this page and copy the link of the repository
@@ -33,9 +33,9 @@ To get a local copy up and running follow these simple steps.
 - Go to the cloned repository using `cd` command
 - Using the text editor of your choice, update the following content with your information:
 -   config.consumer_key        = "YOUR_CONSUMER_KEY"
--  config.consumer_secret     = "YOUR_CONSUMER_SECRET"
+-  config.consumer_secret      = "YOUR_CONSUMER_SECRET"
 -   config.access_token        = "YOUR_ACCESS_TOKEN"
--  config.access_token_secret = "YOUR_ACCESS_SECRET"
+-  config.access_token_secret  = "YOUR_ACCESS_SECRET"
 
 
 ### Run tests
