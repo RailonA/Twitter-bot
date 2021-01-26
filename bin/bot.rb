@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+# frozen_string_literal: true
 
 require 'twitter'
 require 'date'
@@ -58,21 +58,3 @@ def memory_checker
     end
   end
 end
-
-# if @option_data_name.include?(@option_data_name[set_randome_page])
-# puts "true"
-# else
-#     puts "false"
-# end
-
-# if set_randome_page == rand(0..@option_data_name.length - 1).round
-#     puts "true"
-#     puts set_randome_page
-
-# else
-#         puts "false"
-#         puts set_randome_page
-
-#     end
-
-# puts @option_data_name.each_with_index(set_randome_page)
