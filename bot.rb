@@ -6,10 +6,10 @@ require 'date'
 # tweet_info = TweetInfo.new
 
 @twitter = Twitter::REST::Client.new do |config|
-  config.consumer_key        = "YOUR_CONSUMER_KEY"
-  config.consumer_secret     = "YOUR_CONSUMER_SECRET"
-  config.access_token        = "YOUR_ACCESS_TOKEN"
-  config.access_token_secret = "YOUR_ACCESS_SECRET"
+  config.consumer_key = 'YOUR_CONSUMER_KEY'
+  config.consumer_secret = 'YOUR_CONSUMER_SECRET'
+  config.access_token = 'YOUR_ACCESS_TOKEN'
+  config.access_token_secret = 'YOUR_ACCESS_SECRET'
 end
 
 @time = Time.now
@@ -23,8 +23,8 @@ end
 
 @option_data_name = %w[SpaceX rails arduino]
 
-page_one   = @twitter.user_timeline(@option_data_name[0], count: @total_count)
-page_two   = @twitter.user_timeline(@option_data_name[1], count: @total_count)
+page_one = @twitter.user_timeline(@option_data_name[0], count: @total_count)
+page_two = @twitter.user_timeline(@option_data_name[1], count: @total_count)
 page_three = @twitter.user_timeline(@option_data_name[2], count: @total_count)
 
 @option_data = [page_one, page_two, page_three]
@@ -57,5 +57,3 @@ def memmory_checker
     end
   end
 end
-
-
