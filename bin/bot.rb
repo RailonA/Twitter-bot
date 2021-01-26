@@ -1,47 +1,49 @@
+#!/usr/bin/env ruby
+
 require 'twitter'
 require 'date'
 
-time = Time.new
+require '../lib/user_info'
 
-twitter = Twitter::REST::Client.new do |config|
+
+  twitter = Twitter::REST::Client.new do |config|
     config.consumer_key        = "YOUR_CONSUMER_KEY"
     config.consumer_secret     = "YOUR_CONSUMER_SECRET"
     config.access_token        = "YOUR_ACCESS_TOKEN"
     config.access_token_secret = "YOUR_ACCESS_SECRET"
+
+  end
+  @time = Time.now
+
+  @randome_page = 0
+  @randome_page_tweet = 0
+  @selected_info = ""
+  @option_data_name = ["","",""]
+
+  @total_count = 10
+  
+
+  page_one = twitter.user_timeline('SpaceX', count: @total_count)
+  page_two = twitter.user_timeline('rails', count: @total_count)
+  page_three = twitter.user_timeline('arduino', count: @total_count)
+
+
+  @option_data_name = %w[SpaceX rails arduino]
+
+  @option_data = [page_one, page_two, page_three]
+
+  def set_randome
+  @randome_page = rand(0..@option_data_name.length-1).round
+  @randome_page_tweet = rand(0..@total_count-1).round
+  end
+
+def selected_tweet
+  selected_info = @option_data[@randome_page][@randome_page_tweet].full_text
 end
-
-# checks my latest tweets
-
-user_profile =  twitter.user_timeline("railonacosta")
-
-spaceX_latest_tweets = twitter.user_timeline("SpaceX",count:10)
-rails_latest_tweets = twitter.user_timeline("rails",count:10)
-arduino_latest_tweets = twitter.user_timeline("arduino",count:10)
-
-# spaceX_latest_tweets.each { |tweet| puts tweet.full_text }
-# rails_latest_tweets.each { |tweet| puts tweet.full_text }
-# arduino_latest_tweets.each { |tweet| puts tweet.full_text }
-
-option_data_name = ["SpaceX","rails","arduino"]
-
-# An array that holds the three pages
-
-option_data = [spaceX_latest_tweets,rails_latest_tweets,arduino_latest_tweets]
-
-# I need a counter thats randome
-
-randome_number_01 = rand(0..2).round
-randome_number_02 = rand(0..9).round
-
-# The randome selector between (0..9) [rand][rand]
-
-selected_info = option_data[randome_number_01][randome_number_02].full_text
-
-  puts "Fascinating stuff done by @#{option_data_name[randome_number_01]} #{selected_info}"
-
-
-#  unless ((time.hour == 18) && (time.min == 40))
-
-#      twitter.update("Fascinating stuff done by @#{option_data_name[randome_number_01]} #{selected_info}")
-
-#   end
+  
+#   puts "Fascinating stuff done by @#{@option_data_name[@randome_page]}" + selected_tweet 
+def daily_print
+ while ((@time.hour == 12) && (@time.min == 0)) do
+     twitter.update("Fascinating stuff done by @#{@option_data_name[@randome_page]}" + selected_tweet )
+  end
+end
