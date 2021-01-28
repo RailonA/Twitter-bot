@@ -51,8 +51,11 @@ You should see something similar to
 ## Change NEEDED for the project to push to your Twitter Page
 ### Step: 1
 For the code to push the content to your Twitter page, you must go to the ‘lib/tweet_methods.rb‘ file and uncomment line 46 by highlighting the line and pressing  (CTRL + ?)
+
 ‘@twitter.update("Fascinating stuff done by @#{@option_data_name[@randome_page]}" + selected_tweet)’
+
 We can now delete line 45
+
 ‘   puts "Fascinating stuff done by @#{@option_data_name[set_randome_page]}" + selected_tweet’
 
 ### Step: 2
