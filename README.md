@@ -21,15 +21,17 @@ To get a local copy up and running follow these simple steps.
 - Terminal
 - Ruby [Install](https://www.theodinproject.com/courses/ruby-programming/lessons/installing-ruby-ruby-programming)
 - RSpec [Install](https://www.theodinproject.com/courses/ruby-programming/lessons/introduction-to-rspec)
-- An account on Twitter with a Developer Partal
+- An account on Twitter with a Developer Portal
+[WebPAge](https://developer.twitter.com/en)
 
 #### Setup
-- Run `bundle install` to install the required gems in your computer
+- Run `bundle install` to install the required gems on your computer
 
 
 #### Clone the repository
-- Click on the "code" button above in this page and copy the link of the repository
+- Click on the "code" button above on this page and copy the link to the repository
 - Open a terminal (CTRL + ALT + T), type `git clone` and paste the link you copied in the previous step, then hit Enter
+Ex: ‘git clone https://github.com/RailonA/Twitter-bot.git’
 - Go to the cloned repository using `cd` command
 - Using the text editor of your choice, update the following content with your information:
 -   config.consumer_key        = "YOUR_CONSUMER_KEY"
@@ -40,16 +42,30 @@ To get a local copy up and running follow these simple steps.
 
 ### Run tests
 
-From the root folder, run `ruby bot.rm`
+From the root folder, run `ruby bin/bot.rb`
 
+You should see something similar to
+ 
+‘Fascinating stuff done by @SpaceXRT @nettofarah: For some reason, Rails + PostgreSQL + Plain CSS + Heroku still beats every single “modern stack” for web app develop… https://t.co/DQmHieWRfZ’
 
+## Change NEEDED for the project to push to your Twitter Page
+### Step: 1
+For the code to push the content to your Twitter page, you must go to the ‘lib/tweet_methods.rb‘ file and uncomment line 46 by highlighting the line and pressing  (CTRL + ?)
+‘@twitter.update("Fascinating stuff done by @#{@option_data_name[@randome_page]}" + selected_tweet)’
+We can now delete line 45
+‘   puts "Fascinating stuff done by @#{@option_data_name[set_randome_page]}" + selected_tweet’
+
+### Step: 2
+Run the program again by typing run `ruby bin/bot.rb`
+
+You will now see a new Tweet on your Twitter account.
 
 ## Authors
 
 👤 **Railon Acosta**
 - GitHub: [@railonA](https://github.com/RailonA)
 - Linkedin: [@railonAcosta](https://www.linkedin.com/in/railon-acosta-81265180/)
-- Twiter: [@railonAcosta](https://twitter.com/RailonAcosta)
+- Twitter: [@railonAcosta](https://twitter.com/RailonAcosta)
 
 ## 🤝 Contributing
 
@@ -63,4 +79,6 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-Thanks for the both parties involved in the development of this project.
+Thanks to both parties involved in the development of this project.
+
+
