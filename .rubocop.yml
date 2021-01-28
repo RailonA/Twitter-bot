@@ -1,19 +1,67 @@
-name: Linters
+AllCops:
+  Exclude:
+    - "Guardfile"
+    - "Rakefile"
 
-on: pull_request
+  DisplayCopNames: true
 
-jobs:
-  rubocop:
-    name: Rubocop
-    runs-on: ubuntu-18.04
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-ruby@v1
-        with:
-          ruby-version: 2.6.x
-      - name: Setup Rubocop
-        run: |
-          gem install --no-document rubocop:'~>0.81.0' # https://docs.rubocop.org/en/stable/installation/
-          [ -f .rubocop.yml ] || wget https://raw.githubusercontent.com/microverseinc/linters-config/master/ruby/.rubocop.yml
-      - name: Rubocop Report
-        run: rubocop --color
+Layout/LineLength:
+  Max: 130
+Metrics/MethodLength:
+  Max: 20
+Metrics/AbcSize:
+  Max: 50
+Metrics/ClassLength:
+  Max: 150
+Metrics/BlockLength:
+  ExcludedMethods: ['describe']
+  Max: 30
+Metrics/CyclomaticComplexity:
+  Max: 7
+
+
+Style/Documentation:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/EachForSimpleLoop:
+  Enabled: false
+Style/AndOr:
+  Enabled: false
+Style/DefWithParentheses:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: never
+
+Layout/HashAlignment:
+  EnforcedColonStyle: key
+Layout/ExtraSpacing:
+  AllowForAlignment: false
+Layout/MultilineMethodCallIndentation:
+  Enabled: true
+  EnforcedStyle: indented
+Lint/RaiseException:
+  Enabled: false
+Lint/StructNewOverride:
+  Enabled: false
+Style/HashEachMethods:
+  Enabled: false
+Style/HashTransformKeys:
+  Enabled: false
+Style/HashTransformValues:
+  Enabled: false
+Link/ScriptPermission:
+  Enabled: false
+
+#   # Disable method perceived complexity (how it is hard to read a method)
+# Metrics/PerceivedComplexity:
+#   Enabled: false
+
+# # Disable cyclomatic complexity which is a number of paths through a method
+# Metrics/CyclomaticComplexity:
+#   Enabled: false
+
+# Metrics/MethodLength:
+#   Enabled: false
+# Metrics/ModuleLength:
+#   Enabled: false

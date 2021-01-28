@@ -1,7 +1,3 @@
-# frozen_string_literal: true
-
-# !/usr/bin/env ruby
-
 require 'twitter'
 
 # Description/TweetKeys class returns the keys of the user
@@ -9,10 +5,10 @@ class TweetBotMethods
   attr_accessor :tweet
 
   @tweet = Twitter::REST::Client.new do |config|
-    config.consumer_key = 'YOUR_CONSUMER_KEY'
-    config.consumer_secret = 'YOUR_CONSUMER_SECRET'
-    config.access_token = 'YOUR_ACCESS_TOKEN'
-    config.access_token_secret = 'YOUR_ACCESS_SECRET'
+    config.consumer_key = 'DTixP0nUfE5DWP4B3t5WJ2bYX'
+    config.consumer_secret = 'XcF2k3wlOz6dZoLW3rN3p770B05nlML2x3x3LfoyiPiaDYwBKe'
+    config.access_token = '1297192003965460486-EQs3JLZ2e2XzsElODNJkbx7GvKV6Gf'
+    config.access_token_secret = 'KgeIWlX6nM278r8vTa9goEWz6ZSDGzkNKsSvpmZTmv5bO'
   end
 
   @time = Time.new

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative '../bin/bot'
 require_relative '../lib/tweet_methods'
 
