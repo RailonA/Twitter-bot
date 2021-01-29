@@ -24,6 +24,7 @@ To get a local copy up and running follow these simple steps.
 - An account on Twitter with a Developer Portal
 [WebPAge](https://developer.twitter.com/en)
 
+
 #### Setup
 - Run `bundle install` to install the required gems on your computer
 
@@ -33,12 +34,25 @@ To get a local copy up and running follow these simple steps.
 - Open a terminal (CTRL + ALT + T), type `git clone` and paste the link you copied in the previous step, then hit Enter
 Ex: ‘git clone https://github.com/RailonA/Twitter-bot.git’
 - Go to the cloned repository using `cd` command
-- Using the text editor of your choice, update the following content with your information:
--   config.consumer_key        = "YOUR_CONSUMER_KEY"
--  config.consumer_secret      = "YOUR_CONSUMER_SECRET"
--   config.access_token        = "YOUR_ACCESS_TOKEN"
--  config.access_token_secret  = "YOUR_ACCESS_SECRET"
+###Getting Your API Keys
 
+After setting up your Twitter Developer Portal, you will need to make a new App.
+
+On the top-left side select the arrow pointing down
+Select the Overview 
+Select `+Add App`
+
+After Making an app, you should see `Settings` and `Keys and Tokens`
+Select `Keys and Tokens`
+
+You should now see Consumer Keys, please select `Regenerate`  for the `API key & secret` as well as the `Access token & secret`
+
+Use these credentials to fill out :
+
+config.consumer_key = "YOUR_CONSUMER_KEY"
+config.consumer_secret = "YOUR_CONSUMER_SECRET"
+config.access_token = "YOUR_ACCESS_TOKEN"
+config.access_token_secret = "YOUR_ACCESS_SECRET"
 
 ### Run tests
 
@@ -51,11 +65,8 @@ You should see something similar to
 ## Change NEEDED for the project to push to your Twitter Page
 ### Step: 1
 For the code to push the content to your Twitter page, you must go to the ‘lib/tweet_methods.rb‘ file and uncomment line 46 by highlighting the line and pressing  (CTRL + ?)
-
 ‘@twitter.update("Fascinating stuff done by @#{@option_data_name[@randome_page]}" + selected_tweet)’
-
 We can now delete line 45
-
 ‘   puts "Fascinating stuff done by @#{@option_data_name[set_randome_page]}" + selected_tweet’
 
 ### Step: 2
