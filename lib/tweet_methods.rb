@@ -14,7 +14,6 @@ class TweetBotMethods
     config.access_token_secret = ENV['ACCESS_TOKEN_SECRET']
   end
 
-
   @time = Time.new
   @total_count = 10
   @option_data_name = %w[SpaceX rails arduino]
@@ -55,5 +54,4 @@ class TweetBotMethods
       end
     end
   end
-  
 end
