@@ -2,6 +2,9 @@
 
 require 'twitter'
 require 'date'
+require 'dotenv'
+
+Dotenv.load
 
 # Description/TweetKeys class returns the keys of the user
 class TweetBotMethods

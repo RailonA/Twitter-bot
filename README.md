@@ -56,7 +56,7 @@ config.access_token_secret = "YOUR_ACCESS_SECRET"
 
 ### Run tests
 
-From the root folder, run `ruby bin/bot.rb`
+From the root folder (EX: `../Twitter-bot$'), run `ruby bin/bot.rb`
 
 You should see something similar to
  
