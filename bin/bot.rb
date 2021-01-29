@@ -6,8 +6,6 @@ require 'dotenv'
 
 Dotenv.load
 
-
-
 require_relative '../lib/tweet_methods'
 
 tweet = TweetBotMethods
