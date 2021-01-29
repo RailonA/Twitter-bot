@@ -7,7 +7,12 @@ require 'date'
 class TweetBotMethods
   attr_accessor :tweet
 
-
+  # @tweet = Twitter::REST::Client.new do |config|
+  #   config.consumer_key = 'QTECXfqoLw5HH6mFbZQvhaGcF'
+  #   config.consumer_secret = 'xtpW0hHuDu1Da8RToXivFau0rdXB3Ojh2OgT0Wu61a8bqC7Ruo'
+  #   config.access_token = '1297192003965460486-gjIvXkf92HIMfXfBnPq9AClD0vpySu'
+  #   config.access_token_secret = 'dwjBLkwcNmR9kmgpv0bJxELH2dpbabHCfHvYjY4rnW2ci'
+  # end
 
   @tweet = Twitter::REST::Client.new do |config|
     config.consumer_key = ENV['CONSUMER_KEY']
