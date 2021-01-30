@@ -40,9 +40,10 @@ class TweetBotMethods
   end
 
   def self.tweet_update
-       @tweet.update("Fascinating stuff done by @#{@option_data_name[@randome_page.to_i]}" + selected_tweet)
+    puts "Fascinating stuff done by @#{@option_data_name[set_randome_page]}" + selected_tweet
+    # @tweet.update("Fascinating stuff done by @#{@option_data_name[@randome_page.to_i]}" + selected_tweet)
   end
-
+ 
   private
 
   def memory_checker
